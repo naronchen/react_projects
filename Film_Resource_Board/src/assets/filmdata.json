@@ -1,0 +1,59 @@
+[
+    {
+        "name": "Parasite",
+        "tags": "black comedy thriller crime",
+        "rating": "10",
+        "imgUrl": "./src/assets/imgs/parasite.jpg",
+        "link": "https://www.imdb.com/title/tt6751668/"
+    },
+    {
+        "name": "Hacksaw Ridge",
+        "rating": "9",
+        "imgUrl": "./src/assets/imgs/hacksaw.jpg",
+        "link": "https://www.imdb.com/title/tt2119532/"
+    },
+    {
+        "name": "A Beautiful Mind",
+        "rating": "10",
+        "imgUrl": "./src/assets/imgs/beautifulmind.jpg",
+        "link": "https://www.imdb.com/title/tt0268978/"
+    },
+    {
+        "name": "Sixth Sense",
+        "rating": "10",
+        "imgUrl": "./src/assets/imgs/sixthsense.jpeg",
+        "link": "https://www.imdb.com/title/tt0167404/"
+    },
+    {
+        "name": "The Great Gatsby",
+        "rating": "9",
+        "imgUrl": "./src/assets/imgs/gatsby.jpeg",
+        "link": "https://www.imdb.com/title/tt1343092/"
+    },
+    {
+        "name": "Dark Waters",
+        "rating": "10",
+        "imgUrl": "./src/assets/imgs/dark_waters.jpg",
+        "link": "https://www.imdb.com/title/tt9071322/"
+    },
+    {
+        "name": "Trial of the Chicago 7",
+        "rating": "10",
+        "imgUrl": "./src/assets/imgs/chicago7.jpg",
+        "link": "https://www.imdb.com/title/tt1070874/"
+    },
+    {
+        "name": "Portrait of a Lady on Fire",
+        "rating": "8",
+        "imgUrl": "./src/assets/imgs/portraitlady.jpg",
+        "link": "https://www.imdb.com/title/tt8613070/?ref_=nv_sr_srsg_0"
+    },
+    {
+        "name": "Ready Player One",
+        "rating": "7",
+        "imgUrl": "./src/assets/imgs/readyplayer1.jpeg",
+        "link": "https://www.imdb.com/title/tt1677720/?ref_=nv_sr_srsg_0"
+    }
+
+
+]

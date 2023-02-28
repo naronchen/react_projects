@@ -14,3 +14,31 @@
   justify-content: space-evenly;
 }
 
+.Card {
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.card__image{
+  width: 250px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.card__button{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: olivedrab;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.card__button:hover{
+  background-color: darkolivegreen;
+  cursor: pointer;
+}
