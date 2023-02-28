@@ -50,9 +50,27 @@
     },
     {
         "name": "Ready Player One",
-        "rating": "7",
+        "rating": "6",
         "imgUrl": "./src/assets/imgs/readyplayer1.jpeg",
         "link": "https://www.imdb.com/title/tt1677720/?ref_=nv_sr_srsg_0"
+    },
+    {
+        "name": "Citizen Kane",
+        "rating": "7",
+        "imgUrl": "./src/assets/imgs/citizen.webp",
+        "link": "https://www.imdb.com/title/tt1677720/?ref_=nv_sr_srsg_0"
+    },
+    {
+        "name": "About Time",
+        "rating": "9",
+        "imgUrl": "./src/assets/imgs/about_time.jpg",
+        "link": "https://www.imdb.com/title/tt0033467/?ref_=fn_al_tt_1"
+    },
+    {
+        "name": "Isle of Dogs",
+        "rating": "9",
+        "imgUrl": "./src/assets/imgs/isleofdogs.jpg",
+        "link": "https://www.imdb.com/title/tt5104604/?ref_=nv_sr_srsg_0"
     }
 
 
