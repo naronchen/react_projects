@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Film Resource Board 🥑</h1>
+      <h1>Film Recommendation Board 🥑</h1>
         <div className="card-container">
           {films.map(film => (
             <Card
