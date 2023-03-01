@@ -1,1 +1,1 @@
-<img src='./src/assets/webpic.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./src/assets/webpic.png' title='samosa selector game' width='' alt='samosa' />
