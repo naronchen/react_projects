@@ -41,7 +41,10 @@ function App() {
   //proceed logic
   return (
     <div className="App" >
-      <h1> 🧪 COMMON CATIONS AND ANIONS   🧪 </h1>
+      <div className="description">
+        <h1> 🧪 COMMON CATIONS AND ANIONS 🧪 </h1>
+        <h2> Number of cards: {data.answer.length}</h2>
+      </div>
       <div className="flashcard" onClick={flip}>
         <h2 id="card-text">{data.question[idx]}</h2>
       </div>

@@ -4,7 +4,13 @@ body {
   align-items: center;
   height: 100vh;
 }
+.description{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
+}
 .flashcard {
   width: 600px;
   height: 400px;
