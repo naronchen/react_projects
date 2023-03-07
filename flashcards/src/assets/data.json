@@ -1,0 +1,28 @@
+{
+    "question": ["Bromide", 
+                 "Carbonate", 
+                 "Perchlorate",
+                 "Chlorate",
+                 "Chlorite",
+                 "Hypochlorite",
+                 "Chromate",
+                 "Cyanide",
+                 "Dichromate",
+                 "Fluoride",
+                 "Bicarbonate or Hydrogen Carbonate"
+
+                ],
+                 
+    "answer": ["Br - ",
+               "CO3 2-",  
+               "CIO4 -",
+               "CIO3 -",
+               "ClO2 –",
+               "ClO -",
+               "CrO42 –",
+               "CN –",
+               "Cr2O7 2–",
+               "F -",
+               "HCO3 1–"
+            ]
+}
