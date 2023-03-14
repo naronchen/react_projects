@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import data from './assets/data.json'
+import UserAnswer from './components/userAnswer'
 
 function App() {
 
@@ -38,7 +39,11 @@ function App() {
     setidx(next)
   }
 
-  //proceed logic
+  //handle Input text
+  const [inputs, setInputs] = useState('')
+  
+
+
   return (
     <div className="App" >
       <div className="description">
@@ -50,9 +55,20 @@ function App() {
       </div>
       <div className="button">
         <h1 className="idx-button" onClick={to_prev}>prev</h1>
-        <h1 className="idx-button" onClick={get_random }>random</h1>
+        <h1 className="idx-button" onClick={get_random}>random</h1>
         <h1 className="idx-button" onClick={to_next}>next</h1>
       </div>
+
+      <UserAnswer 
+        label = {data.question[idx]}
+        currentVal = {inputs}
+        handleChange = {(e) => {
+          setInputs(e.target.value) //Asynchronous
+        }}
+      />
+
+
+
     </div>
   )
 }

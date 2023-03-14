@@ -39,3 +39,37 @@ body {
   padding: 0px 10px;
   cursor: pointer;
 }
+
+
+input[type="text"] {
+  display: inline-block; /* display inline-block */
+  width: calc(100% - 80px); /* subtract button width from input width */
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  color: black;
+  vertical-align: middle; /* align with button */
+}
+
+button {
+  display: inline-block; /* display inline-block */
+  width: 70px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 0px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  vertical-align: middle; /* align with input */
+
+}
+
+button:hover {
+  background-color: #3e8e41;
+}

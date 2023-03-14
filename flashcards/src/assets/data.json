@@ -9,8 +9,21 @@
                  "Cyanide",
                  "Dichromate",
                  "Fluoride",
-                 "Bicarbonate or Hydrogen Carbonate"
+                 "Bicarbonate or Hydrogen Carbonate",
 
+                 "Hydroxide",
+                 "Iodide",
+                 "Nitrate",
+                 "Nitrite",
+                 "Phosphate",
+                 "Oxalate",
+                 "Oxide",
+                 "Permanganate",
+                 "Sulfate",
+                 "Sulfite",
+                 "Sulfide",
+                 "Thiocyanate",
+                 "Thiosulfate"
                 ],
                  
     "answer": ["Br - ",
@@ -19,10 +32,24 @@
                "CIO3 -",
                "ClO2 –",
                "ClO -",
-               "CrO42 –",
+               "CrO4 2–",
                "CN –",
                "Cr2O7 2–",
                "F -",
-               "HCO3 1–"
+               "HCO3 1–",
+
+               "OH –",
+               "I –",
+               "NO3 –",
+               "NO2 –",
+               "PO4 3–",
+               "C2O4 2–",
+               "O2 –",
+               "MnO4 –",
+               "SO4 2–",
+               "SO3 2–",
+               "S 2–",
+               "SCN –",
+               "S2O3 2–"
             ]
 }
