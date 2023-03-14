@@ -1,15 +1,18 @@
-const UserAnswer = ({currentVal, handleChange, handleSubmit}) => {
+const UserAnswer = ({label, currentVal, handleChange, handleClick, inputClassName}) => {
     return (
         <div>
             <input
                 type="text"
-                name="userinput"
+                name={label}
                 value={currentVal}
                 placeholder = "your answer.."
                 onChange={handleChange}
+                id="userinput"
+                className ={inputClassName}
             />
+
             <button 
-                onSubmit = {handleSubmit}
+                onClick = {handleClick}
             >
                 Submit
             </button>

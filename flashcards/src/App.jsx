@@ -23,26 +23,35 @@ function App() {
     return Math.floor(Math.random() * max);
   }
 
+  //reset input text and border style
+  const reset = () => {
+    setIsCorrect(null)
+    setInputs('')
+  }
+
   //prev & next 
   const to_prev = () => {
     if (idx > 0){ setidx(idx-1)}
     else{ setidx(data.answer.length - 1)}
+    reset()
   }
   const to_next = () => {
     if (idx < data.answer.length - 1){setidx(idx+1)}
     else{ setidx(0)}
+    reset()
   }
 
   const get_random = () => {
     const next = getRandomInt(data.answer.length-1)
-    console.log(next)
     setidx(next)
+    reset()
   }
 
-  //handle Input text
+  //handle input text
   const [inputs, setInputs] = useState('')
-  
-
+  const [isCorrect, setIsCorrect] = useState(null)
+  const inputClassName = isCorrect === null ? '' : isCorrect ? 'correct-answer' : 'wrong-answer'
+  console.log(inputClassName)
 
   return (
     <div className="App" >
@@ -60,11 +69,18 @@ function App() {
       </div>
 
       <UserAnswer 
-        label = {data.question[idx]}
+        label = {data.answer[idx]}
         currentVal = {inputs}
         handleChange = {(e) => {
           setInputs(e.target.value) //Asynchronous
         }}
+        handleClick = {() => {
+          setIsCorrect(data.answer[idx].trim() === inputs.trim()) //Asynchronous
+          // const inputBox = document.getElementById("userinput");
+          // if (check){ inputBox.style.border = "5px solid green";}
+          // else{ inputBox.style.border = "5px solid red";}
+        }}
+        inputClassName = {inputClassName}
       />
 
 
