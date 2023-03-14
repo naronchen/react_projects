@@ -53,10 +53,14 @@ function App() {
   const inputClassName = isCorrect === null ? '' : isCorrect ? 'correct-answer' : 'wrong-answer'
   // console.log(inputClassName)
 
+  //handle strike
+  const [strike, setstrike] = useState(0)
+
   return (
     <div className="App" >
       <div className="description">
         <h1> 🧪 COMMON CATIONS AND ANIONS 🧪 </h1>
+        <h2> 🌟 Current Strike : {strike}</h2>
         <h2> Number of cards: {data.answer.length}</h2>
       </div>
       <div className="flashcard" onClick={flip}>
@@ -75,7 +79,14 @@ function App() {
           setInputs(e.target.value) //Asynchronous
         }}
         handleClick = {() => {
-          setIsCorrect(data.answer[idx].trim() === inputs.trim()) //Asynchronous
+          let check = data.answer[idx].trim() === inputs.trim()
+          setIsCorrect(check) //Asynchronous
+          if (check){
+            setstrike(strike + 1)
+          }
+          else{
+            setstrike(0)
+          }
           // const inputBox = document.getElementById("userinput");
           // if (check){ inputBox.style.border = "5px solid green";}
           // else{ inputBox.style.border = "5px solid red";}
