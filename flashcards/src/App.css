@@ -81,3 +81,7 @@ button:hover {
 div .wrong-answer {
   border: 3px solid red !important;
 }
+
+input:focus {
+  outline: none;
+}

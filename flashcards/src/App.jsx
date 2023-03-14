@@ -51,7 +51,7 @@ function App() {
   const [inputs, setInputs] = useState('')
   const [isCorrect, setIsCorrect] = useState(null)
   const inputClassName = isCorrect === null ? '' : isCorrect ? 'correct-answer' : 'wrong-answer'
-  console.log(inputClassName)
+  // console.log(inputClassName)
 
   return (
     <div className="App" >
