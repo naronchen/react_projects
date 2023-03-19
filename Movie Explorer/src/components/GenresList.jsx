@@ -4,9 +4,8 @@ import { useState } from 'react';
 const VITE_APP_ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY;
 const HOST = import.meta.env.VITE_APP_HOST;
 
-
 const GenresList = () => {
-  
+
   const fetchGenres = async () => {
     // console.log("hello", VITE_APP_ACCESS_KEY)
     try {
