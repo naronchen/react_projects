@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { genres } from '../assets/genres';
 import { keywords } from '../assets/keywords';
 
-
+const APP_ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY;
 const MovieGenerator = () => {
     
     const [posterUrl, setPosterUrl] = useState("");
@@ -35,8 +35,7 @@ const MovieGenerator = () => {
       try {
         const response = await axios.get('https://streaming-availability.p.rapidapi.com/v2/search/basic', {
           headers: {
-            'X-RapidAPI-Key': '15792749e1msh2bc35992a1cababp1868efjsne74009958817',
-            // 'X-RapidAPI-Key': VITE_APP_ACCESS_KEY,
+            'X-RapidAPI-Key': APP_ACCESS_KEY,
             'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com',
           },
           params: {
