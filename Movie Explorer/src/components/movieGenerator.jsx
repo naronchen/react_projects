@@ -43,7 +43,7 @@ const MovieGenerator = () => {
             country: 'us',
             services: 'netflix,prime.buy,hulu.addon.hbo,peacock.free',
             output_language: 'en',
-            show_type: 'movie',
+            show_type: '',
             genre: {genreId},
             show_original_language: 'en',
             keyword: {keyword}
