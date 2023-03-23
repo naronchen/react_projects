@@ -6,6 +6,7 @@ import { genres } from '../assets/genres';
 import { keywords } from '../assets/keywords';
 
 const APP_ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY;
+
 const MovieGenerator = () => {
     
     const [posterUrl, setPosterUrl] = useState("");
