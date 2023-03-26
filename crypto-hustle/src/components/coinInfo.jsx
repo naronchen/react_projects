@@ -18,13 +18,21 @@ const CoinInfo = ({ image, name, symbol }) => {
 
     }, [symbol]);
     return (
-        <div>
-          {price ? ( // rendering only if API call actually returned us data
-          ) : 
-          null
-          }
-        </div>
-      );
+      <div>
+        {price ? ( 
+          <li className="main-list" key={symbol}>
+          <img
+            className="icons"
+            src={`https://www.cryptocompare.com${image}`}
+            alt={`Small icon for ${name} crypto coin`}
+          />
+          {name} <span className="tab"></span> ${price.USD} USD
+        </li>
+        ) : 
+        null
+        }
+      </div>
+    );
   
   };
   
