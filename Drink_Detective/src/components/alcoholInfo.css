@@ -2,31 +2,66 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 .drink {
   display: flex;
   align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 800px;
+  width: 100%;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .drink-img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: 10px;
+  position: absolute;
 }
 
 .drink-info {
   flex: 1;
+  margin-left: 70px;
+  padding-right: 10px;
 }
 
 .drink h3 {
   margin: 0;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.drink p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.drink p.category {
+  font-weight: bold;
+}
+
+.drink p.instructions {
+  font-weight: bold;
 }
 
 .no-results {
   font-size: 1.2rem;
-  margin: 20px auto;
+} 
+
+.search-results {
+  margin: 50px auto;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 20px;
+  max-width: 800px;
+  position: relative;
   text-align: center;
 }
+
