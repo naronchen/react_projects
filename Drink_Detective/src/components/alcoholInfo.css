@@ -1,0 +1,32 @@
+.drink-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.drink {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.drink-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.drink-info {
+  flex: 1;
+}
+
+.drink h3 {
+  margin: 0;
+}
+
+.no-results {
+  font-size: 1.2rem;
+  margin: 20px auto;
+  text-align: center;
+}

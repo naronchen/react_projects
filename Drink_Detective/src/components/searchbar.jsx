@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import AlcoholInfo from "../../../crypto-hustle/src/components/alcoholInfo"
+import AlcoholInfo from "./alcoholInfo"
 
 
 const SearchBar = () => {
     const [searchInput, setSearchInput] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
+    const [searchResults, setSearchResults] = useState({});
 
     
     const searchItems = searchValue => {
@@ -35,7 +35,7 @@ const SearchBar = () => {
             placeholder="Search..."
             onChange={(inputString) => searchItems(inputString.target.value)}
         />
-            <AlcoholInfo />
+            <AlcoholInfo Info = {searchResults}/>
         </div>
     )
 }
