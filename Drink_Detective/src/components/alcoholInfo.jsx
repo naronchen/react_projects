@@ -48,8 +48,9 @@ const AlcoholInfo = ({ Info, filter, alcoholic, input }) => {
 
 
     // const filterData = ()
-    const alcoholicDrinks = drinks.filter(drink => drink.strAlcoholic === 'Alcoholic');
-    const nonAlcoholicDrinks = drinks.filter(drink => drink.strAlcoholic === 'Non alcoholic');
+    const alcoholicDrinks = drinks ? drinks.filter(drink => drink.strAlcoholic === 'Alcoholic') : [];
+    const nonAlcoholicDrinks = drinks ?  drinks.filter(drink => drink.strAlcoholic === 'Non alcoholic') : [];
+
   return (
     <>
     {drinks && drinks.length > 0 && (
