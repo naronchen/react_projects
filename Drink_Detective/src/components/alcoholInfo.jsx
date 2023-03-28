@@ -48,12 +48,15 @@ const AlcoholInfo = ({ Info, filter, alcoholic, input }) => {
 
 
     // const filterData = ()
-    
+    const alcoholicDrinks = drinks.filter(drink => drink.strAlcoholic === 'Alcoholic');
+    const nonAlcoholicDrinks = drinks.filter(drink => drink.strAlcoholic === 'Non alcoholic');
   return (
     <>
     {drinks && drinks.length > 0 && (
       <p className="result-count">Showing {drinks.length} {drinks.length === 1 ? 'result' : 'results'}</p>
     )}
+    <p>{alcoholicDrinks.length} alcoholic, {nonAlcoholicDrinks.length} non-alcoholic</p>
+    
     <ul className="drink-list">
       {drinks && drinks.length > 0 ? (
         drinks.map((drink) => (
