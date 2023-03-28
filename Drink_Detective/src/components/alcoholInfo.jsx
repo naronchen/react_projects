@@ -1,7 +1,7 @@
 import '../components/alcoholInfo.css'
 import { useState, useEffect } from 'react';
 
-const AlcoholInfo = ({ Info, filter, alcoholic }) => {
+const AlcoholInfo = ({ Info, filter, alcoholic, input }) => {
     // console.log('aloholic: ', alcoholic);
     // if (Info.drinks) {
     //     console.log("heelo", Info.drinks[0])
@@ -32,9 +32,9 @@ const AlcoholInfo = ({ Info, filter, alcoholic }) => {
         if (filter.trim() === '') {
           return drinks;
         }
-        drinks.map((drink) => {
-          console.log('drink.strAlcoholic: ', drink.strAlcoholic);
-        })
+        // drinks.map((drink) => {
+        //   console.log('drink.strAlcoholic: ', drink.strAlcoholic);
+        // })
         return drinks.filter((drink) => (
           getIngredients(drink)
           .toLowerCase()
@@ -64,8 +64,8 @@ const AlcoholInfo = ({ Info, filter, alcoholic }) => {
           </li>
         ))
       ) : (
-        <p className="no-results">no results found</p>
-      )}
+        input && <p className="no-results">no results found</p>
+        )}
     </ul>
   );
 

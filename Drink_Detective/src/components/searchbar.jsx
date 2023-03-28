@@ -79,7 +79,12 @@ const SearchBar = () => {
 
             <button onClick={toggleFilterType}>{filterType === 'Alcoholic' ? 'Show Non alcoholic' : 'Show Alcoholic'}</button>
 
-            < AlcoholInfo Info={searchResults} filter = {filterIngredient} alcoholic={filterType}/>
+            < AlcoholInfo 
+                Info={searchResults} 
+                filter = {filterIngredient} 
+                alcoholic={filterType}
+                input = {searchInput}
+                />
         </div>
 
     )
