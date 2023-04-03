@@ -1,4 +1,4 @@
-# Web Development Project 1 - *Film Recommendation Board*
+# *Film Recommendation Board*
 
 Submitted by: **Naron CHen**
 
