@@ -1,4 +1,4 @@
-# Web Development Project 5 - *Alcohol Detective*
+# *Alcohol Detective*
 
 Submitted by: **Naron Chen**
 
