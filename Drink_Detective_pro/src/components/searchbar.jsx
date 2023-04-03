@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import AlcoholInfo from "./alcoholInfo"
-import "./searchbar.css"
+import "../styles/searchbar.css"
 
 const SearchBar = () => {
     const [searchInput, setSearchInput] = useState("");

@@ -1,4 +1,4 @@
-import '../components/alcoholInfo.css'
+import '../styles/alcoholInfo.css'
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
