@@ -1,6 +1,6 @@
 # *Film Recommendation Board*
 
-Submitted by: **Naron CHen**
+Submitted by: **Naron Chen**
 
 This web app: **A recommendation for movies with rating, each with a button to imdb page with more details, import data from json file**
 
