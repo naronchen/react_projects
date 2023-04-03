@@ -1,6 +1,9 @@
 import '../styles/alcoholInfo.css'
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Charts from "./charts";
+import TestCharts from './testCharts';
+
 
 const AlcoholInfo = ({ Info, filter, alcoholic, input }) => {
     // console.log('aloholic: ', alcoholic);
@@ -54,27 +57,30 @@ const AlcoholInfo = ({ Info, filter, alcoholic, input }) => {
 
   return (
     <>
-    {drinks && drinks.length > 0 && (
-      <p className="result-count">Showing {drinks.length} {drinks.length === 1 ? 'result' : 'results'} | {alcoholicDrinks.length} alcoholic, {nonAlcoholicDrinks.length} non-alcoholic</p>
-    )}
 
-    <ul className="drink-list">
-      {drinks && drinks.length > 0 ? (
-        drinks.map((drink) => (
-          <Link className="drink" key={drink.idDrink} to={`/detail/${drink.idDrink}`}>
-            <img src={drink.strDrinkThumb} alt={drink.strDrink} className="drink-img" />
-            <div className="drink-info">
-              <h3>{drink.strDrink}</h3>
-              <p>Category: {drink.strCategory} | {drink.strAlcoholic}</p>
-              <p>Ingredients: {getIngredients(drink)}</p>
-              <p>Instructions: {drink.strInstructions}</p>
-            </div>
-          </Link>
-        ))
-      ) : (
-        input && <p className="no-results">no results found</p>
-        )}
-    </ul>
+      {drinks && drinks.length > 0 && (
+        <p className="result-count">Showing {drinks.length} {drinks.length === 1 ? 'result' : 'results'} | {alcoholicDrinks.length} alcoholic, {nonAlcoholicDrinks.length} non-alcoholic</p>
+      )}
+
+      < Charts drinks = {drinks} />
+      < TestCharts />
+      <ul className="drink-list">
+        {drinks && drinks.length > 0 ? (
+          drinks.map((drink) => (
+            <Link className="drink" key={drink.idDrink} to={`/detail/${drink.idDrink}`}>
+              <img src={drink.strDrinkThumb} alt={drink.strDrink} className="drink-img" />
+              <div className="drink-info">
+                <h3>{drink.strDrink}</h3>
+                <p>Category: {drink.strCategory} | {drink.strAlcoholic}</p>
+                <p>Ingredients: {getIngredients(drink)}</p>
+              </div>
+            </Link>
+          ))
+        ) : (
+          input && <p className="no-results">no results found</p>
+          )}
+      </ul>
+
     </>
   );
 
