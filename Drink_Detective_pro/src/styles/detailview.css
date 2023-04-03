@@ -1,0 +1,75 @@
+/* Style for the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Style for the drink card */
+  .drink-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the drink name */
+  .drink-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the drink image */
+  .drink-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the drink details */
+  .drink-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the drink detail labels */
+  .drink-detail-label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  /* Style for the ingredients list */
+  .ingredients-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the ingredients list items */
+  .ingredients-list-item {
+    margin-bottom: 5px;
+  }
+  
+  .link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  /* Hover style for the link */
+  .link:hover {
+    background-color: #555;
+    color: white;
+  }

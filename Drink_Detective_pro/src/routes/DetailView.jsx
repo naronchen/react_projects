@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams} from "react-router-dom";
+import '../styles/detailview.css'
 
 
 const DetailView = () => {
@@ -26,7 +27,7 @@ const DetailView = () => {
       
           if (ingredient) {
             ingredients.push(
-                <li key={i} className=''>{ingredient} - {measure}</li>
+                <li key={i} className="ingredients-list-item">{ingredient} - {measure}</li>
             );
           } else {
             // Stop the loop if the ingredient is null
@@ -38,25 +39,27 @@ const DetailView = () => {
       };
 
     return (
-      <div>
-         <div>
-            {detail && detail.drinks.map((drink) => (
-                <div key={drink.idDrink}>
-                    <h2>{drink.strDrink}</h2>
-                    <img src={drink.strDrinkThumb} alt={drink.strDrink} />
-                    <p>Category: {drink.strCategory}</p>
-                    <p>Alcoholic: {drink.strAlcoholic}</p>
-                    <p>Glass: {drink.strGlass}</p>
-                    <p>Instructions: {drink.strInstructions}</p>
-                    <ul> {renderIngredients(drink)} </ul>
-                </div>
-            ))}
-    </div>
-        <Link to={'/'}>
-            Search Again
-        </Link>
-        
+<div className="container">
+  <div>
+    {detail && detail.drinks.map((drink) => (
+      <div key={drink.idDrink} className="drink-card">
+        <h2 className="drink-name">{drink.strDrink}</h2>
+        <img className="drink-image" src={drink.strDrinkThumb} alt={drink.strDrink} />
+        <div className="drink-details">
+          <p><span className="drink-detail-label">Category:</span> {drink.strCategory}</p>
+          <p><span className="drink-detail-label">Alcoholic:</span> {drink.strAlcoholic}</p>
+          <p><span className="drink-detail-label">Glass:</span> {drink.strGlass}</p>
+          <p><span className="drink-detail-label">Instructions:</span> {drink.strInstructions}</p>
+        </div>
+        <ul className="ingredients-list">
+          {renderIngredients(drink)}
+        </ul>
       </div>
+    ))}
+  </div>
+  <Link to={'/'} className="link">Search Again</Link>
+</div>
+
     );
   };
   
