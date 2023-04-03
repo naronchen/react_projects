@@ -4,7 +4,7 @@ Submitted by: **Naron Chen**
 
 This web app: **A recommendation for movies with rating, each with a button to imdb page with more details, import data from json file**
 
-Time spent: **3** hours spent in total
+Time spent: **5** hours spent in total
 
 ## Required Features
 
