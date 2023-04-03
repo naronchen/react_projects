@@ -1,4 +1,4 @@
-# Web Development Project 4 - *Name of App Here*
+# *Movie Explorer*
 
 Submitted by: **Naron Chen**
 
