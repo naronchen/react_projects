@@ -4,8 +4,6 @@ Submitted by: **Naron Chen**
 
 This web app: ** flash card for remembering common ions**
 
-Time spent: **5** hours spent in total
-
 ## Required Features
 
 The following **required** functionality is completed:
