@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./coinInfo.css";
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 

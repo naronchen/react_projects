@@ -1,5 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
+import CoinChart from "./coinChart";
 import { useParams } from "react-router-dom";
+import "./coinDetail.css";
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 const CoinDetail = () => {
@@ -46,7 +48,10 @@ const CoinDetail = () => {
           This coin was built with the algorithm{" "}
           {fullDetails.textData[params.symbol].Algorithm}{" "}
         </div>
-
+        <CoinChart
+            symbol={params.symbol}
+            market={fullDetails.numbers[params.symbol].USD.MARKET}
+          />
         <table>
           <tbody> 
             <tr>
@@ -103,7 +108,7 @@ const CoinDetail = () => {
             </tr>
           </tbody>
         </table>
-      
+
      </div>
   
 
