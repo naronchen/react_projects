@@ -5,6 +5,7 @@ const API_KEY = import.meta.env.VITE_APP_API_KEY;
 const CoinDetail = () => {
   let params = useParams();
   const [fullDetails, setFullDetails] = useState(null);
+  console.log('fullDetails: ', fullDetails);
 
   useEffect(() => {
     const getCoinDetail = async () => {
@@ -17,6 +18,7 @@ const CoinDetail = () => {
           API_KEY
       );
     const detailsJson = await details.json();
+    console.log('detailsJson: ', detailsJson);
     const descripJson = await description.json();
     console.log('descripJson: ', descripJson);
     
@@ -26,8 +28,10 @@ const CoinDetail = () => {
     getCoinDetail().catch(console.error);
     }, []);
 
+    if (fullDetails){
     return (
-     <div>
+
+      <div>
       <h1>{fullDetails.textData[params.symbol].FullName}</h1>
         <img
           className="images"
@@ -99,9 +103,13 @@ const CoinDetail = () => {
             </tr>
           </tbody>
         </table>
-
+      
      </div>
-    );
+  
+
+    );} else {
+      return <div> Loading... </div>
+    }
   };
   
   export default CoinDetail;
