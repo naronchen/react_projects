@@ -1,8 +1,8 @@
-# Web Development Project 5 - *Alcohol Detective*
+# - *Alcohol Detective Pro*
 
 Submitted by: **Naron Chen**
 
-This web app: **Alcohol information search**
+This web app: **Find a cocktail with data you need**
 
 Time spent: **7** hours spent in total
 
@@ -10,33 +10,24 @@ Time spent: **7** hours spent in total
 
 The following **required** functionality is completed:
 
-- [x] **The list displays a list of data fetched using an API call**
-- [x] **Data uses the useEffect React hook and async/await syntax**
-- [x] **The app dashboard includes at least three summary statistics about the data such as**
-  - [x] *total search results count*
-  - [x] *count of alcoholic drinks*
-  - [x] *count of non-alcoholic drinks*
-- [x] **A search bar allows the user to search for an item in the fetched data**
-- [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [x] **The app includes at least two unique chart developed using the fetched data that tell an interesting story**
+- [x] **Clicking on an item in the list view displays more details about it**
+- [x] **Clicking on an item has a direct, unique link to that item's detail view page**
+
 
 The following **optional** features are implemented:
 
-- [x] Multiple filters can be applied simultaneously
-- [x] Filters use different input types such as a text input, a selection, or a slider
-- [ ] The user can enter specific bounds for filter values
-
-The following **additional** features are implemented:
-
-* [x] stop previous UseEffect when new useEffect is called
+- [x] The site's customized dashboard contains more content that explains what is interesting about the data
+- [ ] The site allows users to toggle between different data visualizations
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/dTCsVyH.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/JdPchPC.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with Kap  
+GIF created with ...  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -44,7 +35,7 @@ GIF created with Kap
 
 ## Notes
 
-Finding an appropriate API is hard
+Describe any challenges encountered while building the app.
 
 ## License
 
