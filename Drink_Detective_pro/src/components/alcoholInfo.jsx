@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Charts from "./charts";
 // import TestCharts from './testCharts';
+import { Bar } from 'react-chartjs-2';
+
 
 
 const AlcoholInfo = ({ Info, filter, alcoholic, input }) => {
@@ -55,12 +57,48 @@ const AlcoholInfo = ({ Info, filter, alcoholic, input }) => {
     const alcoholicDrinks = drinks ? drinks.filter(drink => drink.strAlcoholic === 'Alcoholic') : [];
     const nonAlcoholicDrinks = drinks ?  drinks.filter(drink => drink.strAlcoholic === 'Non alcoholic') : [];
 
+    const data = {
+      labels: ['Alcoholic', 'Non-alcoholic'],
+      datasets: [
+        {
+          label: '# of Drinks',
+          data: [alcoholicDrinks.length, nonAlcoholicDrinks.length],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+          ],
+          borderWidth: 1,
+        },
+      ],
+    };
+    
+    const options = {
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
+        },
+      },
+    };
+
   return (
     <>
 
       {drinks && drinks.length > 0 && (
-        <p className="result-count">Showing {drinks.length} {drinks.length === 1 ? 'result' : 'results'} | {alcoholicDrinks.length} alcoholic, {nonAlcoholicDrinks.length} non-alcoholic</p>
+        <p className="result-count">Showing {drinks.length} 
+        {drinks.length === 1 ? 
+          'result' : 'results'} | {
+            alcoholicDrinks.length} alcoholic, {
+              nonAlcoholicDrinks.length} non-alcoholic</p>
       )}
+      {drinks && drinks.length > 0 && <Bar data={data} options={options}/>}
+
 
       
       <ul className="drink-list">
