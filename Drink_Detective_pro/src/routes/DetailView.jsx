@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams} from "react-router-dom";
-import '../styles/detailview.css'
+import '../styles/detailview.css';
+import Charts from '../components/charts'
 
 
 const DetailView = () => {
@@ -45,6 +46,7 @@ const DetailView = () => {
       <div key={drink.idDrink} className="drink-card">
         <h2 className="drink-name">{drink.strDrink}</h2>
         <img className="drink-image" src={drink.strDrinkThumb} alt={drink.strDrink} />
+        < Charts drink = {drink} />
         <div className="drink-details">
           <p><span className="drink-detail-label">Category:</span> {drink.strCategory}</p>
           <p><span className="drink-detail-label">Alcoholic:</span> {drink.strAlcoholic}</p>

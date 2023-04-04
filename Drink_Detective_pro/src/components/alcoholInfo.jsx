@@ -2,7 +2,7 @@ import '../styles/alcoholInfo.css'
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Charts from "./charts";
-import TestCharts from './testCharts';
+// import TestCharts from './testCharts';
 
 
 const AlcoholInfo = ({ Info, filter, alcoholic, input }) => {
@@ -62,8 +62,7 @@ const AlcoholInfo = ({ Info, filter, alcoholic, input }) => {
         <p className="result-count">Showing {drinks.length} {drinks.length === 1 ? 'result' : 'results'} | {alcoholicDrinks.length} alcoholic, {nonAlcoholicDrinks.length} non-alcoholic</p>
       )}
 
-      < Charts drinks = {drinks} />
-      < TestCharts />
+      
       <ul className="drink-list">
         {drinks && drinks.length > 0 ? (
           drinks.map((drink) => (

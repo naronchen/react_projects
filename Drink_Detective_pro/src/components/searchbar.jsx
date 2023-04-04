@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import AlcoholInfo from "./alcoholInfo"
 import "../styles/searchbar.css"
-import TestCharts from "./testCharts";
+// import TestCharts from "./testCharts";
 
 const SearchBar = () => {
     const [searchInput, setSearchInput] = useState("");
@@ -86,8 +86,9 @@ const SearchBar = () => {
                 alcoholic={filterType}
                 input = {searchInput}
                 />
+            
 
-            < TestCharts />
+            {/* < TestCharts /> */}
 
             
         </div>
