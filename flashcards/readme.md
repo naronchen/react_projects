@@ -1,4 +1,4 @@
-# Web Development Project 3 - *Common Cations Flash Cards*
+# - *Common Cations Flash Cards*
 
 Submitted by: **Naron Chen**
 
