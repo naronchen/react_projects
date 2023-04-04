@@ -4,7 +4,7 @@ Submitted by: **Naron Chen**
 
 This web app: **Find a cocktail with data you need**
 
-Time spent: **7** hours spent in total
+Time spent: **12** hours spent in total
 
 ## Required Features
 
