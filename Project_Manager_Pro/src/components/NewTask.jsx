@@ -6,7 +6,7 @@ function NewTasks() {
     const [formData, setFormData] = useState({
         color: "",
         content: "",
-        deadline: null
+        deadline: ""
       });
 
     const handleInputChange = (e) => {
@@ -57,7 +57,7 @@ function NewTasks() {
                 />
                 </label>
             <br />
-            {/* <label>
+            <label>
             Deadline:
             <input
                 type="date"
@@ -65,7 +65,7 @@ function NewTasks() {
                 value={formData.deadline}
                 onChange={handleInputChange}
             />
-            </label> */}
+            </label>
             <br />
             <input type="submit" value="Submit" />
         </form>

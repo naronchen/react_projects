@@ -1,4 +1,5 @@
 import NewTasks from "./NewTask";
+import CurrentTasks from "./CurrentTasks";
 
 const URL = import.meta.env.VITE_APP_URL;
 const PUBLIC = import.meta.env.VITE_APP_PUBLIC ;
@@ -8,9 +9,8 @@ function Tasks() {
 
     return (
         <div> 
-            
-             <NewTasks />
-
+            <NewTasks />
+            <CurrentTasks />
         </div>
        
     )
