@@ -3,17 +3,20 @@ ul {
     padding: 0;
   }
   
-  .task-sections {
+.task-sections {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     list-style-type: none;
     padding: 0;
-  }
-  
-  .task-sections li {
+}
+
+/* for some reason middle one is being squeezed */
+
+.task-sections li {
+
     /* flex: 1; */
     /* margin-right: 16px; Add margin between child sections */
-  }
+}
 
 .task-card {
     background-color: #e0e0e0; /* Use a default lighter background color */
