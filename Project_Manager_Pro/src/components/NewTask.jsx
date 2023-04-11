@@ -1,75 +1,109 @@
 import React, { useState } from "react";
-import { supabase } from '../client'
+import { supabase } from '../client';
+import './NewTask.css';
 
+function NewTasks({ onSubmit }) {
+  const [formData, setFormData] = useState({
+    color: "",
+    content: "",
+    deadline: ""
+  });
+  const [expanded, setExpanded] = useState(false); // State to track form expansion
 
-function NewTasks() {
-    const [formData, setFormData] = useState({
-        color: "",
-        content: "",
-        deadline: ""
-      });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    const deadline = new Date(formData.deadline);
+    const updatedDeadline = deadline.toISOString().slice(0, 16);
+    const updatedFormData = { ...formData, deadline: updatedDeadline };
+  
+    await supabase.from('tasks').insert(updatedFormData).select();
+    onSubmit(updatedFormData);
+    setExpanded(false); // Reset form expansion state
+  };
+  
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        // You can access the values of formData.color, formData.content, and formData.deadline and perform further actions, such as sending to an API, etc.
-        // console.log("Color:", formData.color);
-        // console.log("Content:", formData.content);
-        // console.log("Deadline:", formData.deadline);
+  const toggleForm = () => {
+    setExpanded(!expanded); // Toggle form expansion state
+  };
 
-        await supabase
-        .from('tasks')
-        .insert({color: formData.color, content: formData.content, deadline: formData.deadline})
-        .select()
-    };
+  
+  
 
-    return (
-        <div>
-        <form onSubmit={handleSubmit}>
-            <label>
+  return (
+    <div className="new-task-container" >
+      {expanded ? ( // Conditionally render form based on expanded state
+        
+        <form id="new-task-form" onSubmit={handleSubmit}>
+            <h2>New Task 🍉 </h2>
+          <label>
             Color:
-                <select
-                    name="color"
-                    value={formData.color}
-                    onChange={handleInputChange}
-                >
-                    <option value="">-- Choose a color --</option>
-                    <option value="red">red - urgent! 🚑 </option>
-                    <option value="yellow">yellow - better not procastinate 🌇 </option>
-                    <option value="blue">Blue  - take your time 🏖 </option>
-                </select>
-            </label>
-            <br />
-                <label>
-                Content:
-                <input
-                    type="text"
-                    name="content"
-                    value={formData.content}
-                    onChange={handleInputChange}
-                />
-                </label>
-            <br />
-            <label>
+            <select
+              name="color"
+              value={formData.color}
+              onChange={handleInputChange}
+            >
+              <option value=""></option>
+              <option value="red">red - urgent! 🚑 </option>
+              <option value="yellow">yellow - better not procrastinate 🌇 </option>
+              <option value="blue">Blue - take your time 🏖 </option>
+            </select>
+          </label>
+
+          <label>
             Deadline:
             <input
-                type="date"
-                name="deadline"
-                value={formData.deadline}
-                onChange={handleInputChange}
+              type="datetime-local"
+              name="deadline"
+              value={formData.deadline}
+              onChange={handleInputChange}
             />
-            </label>
-            <br />
-            <input type="submit" value="Submit" />
+          </label>
+          <label>
+            Content:
+            <input
+              type="text"
+              name="content"
+              value={formData.content}
+              onChange={handleInputChange}
+            />
+          </label>
+          <br />
+          <div className = "btn-class">
+            <button className="expand-btn" onClick={toggleForm}>
+                Cancel
+            </button>
+            <button id="submit-btn">Submit</button>
+          </div>
+          
         </form>
-        </div>
-    )
+    
+      ):
+      ( 
+        <div style={{ textAlign: 'center' }}>
+            <span>
+                <h2 style={{ display: 'inline', margin: '0' }}>Task Manager 🚀</h2>
+                <button className="expand-btn" onClick={toggleForm} style={{ marginLeft: '10px' }}>
+                New Task
+                </button>
+            </span>
+         </div>
+
+
+    
+    
+          
+  )}
+    </div>
+  );
 }
-export default NewTasks 
+
+export default NewTasks;

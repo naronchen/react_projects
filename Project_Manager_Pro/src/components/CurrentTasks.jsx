@@ -3,8 +3,9 @@ import { supabase } from '../client'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './CurrentTasks.css'
+import TaskData from './TaskData'
 
-function CurrentTasks() {
+function CurrentTasks({currentTasks}) {
     const [tasks, setTasks] = useState([])
     useEffect(() => {
 
@@ -19,7 +20,7 @@ function CurrentTasks() {
         }
 
         fetchTasks()
-    }, [])
+    }, [currentTasks])
     
     const subtractDate = (date) => {
         const today = new Date()
@@ -28,13 +29,13 @@ function CurrentTasks() {
         const diffDays = Math.ceil(diff / (1000 * 3600 * 24))
         const formattedDeadline = taskDate.toLocaleDateString(); // Get formatted date string
         if (diffDays === 0) {
-            return `due today -_0`;
+            return `🔥`;  
         } else if (diffDays === 1) {
-            return `due tmr -_0`;
+            return `👾`; 
           } else if (diffDays > 1) {
-            return `${diffDays} days left`;
+            return `⭐`; 
           } else {
-            return `overdue by ${-diffDays} days`;
+            return `👺`; 
           }
     }
 
@@ -64,20 +65,22 @@ function CurrentTasks() {
     return (
         <div> 
             <ul className="task-sections">
-                <div>
-                    <h2>Tasks in Queue</h2>
+                <div className="the-section">
+                    <h3>Tasks in Queue</h3>
                     {renderTasks(tasks, (task) => !task.inprogress && !task.finished)}
                 </div>
 
-                <div>
-                    <h2>Tasks in Progress</h2>
+                <div className="the-section">
+                    <h3>Tasks in Progress</h3>
                     {renderTasks(tasks, (task) => task.inprogress)}
                 </div>
-                <div>
-                    <h2>Tasks Completed</h2>
+                <div className="the-section">
+                    <h3>Tasks Completed</h3>
                     {renderTasks(tasks, (task) => task.finished)}
                 </div>
             </ul>
+            <TaskData tasks={tasks}/>
+
         </div>
        
     )

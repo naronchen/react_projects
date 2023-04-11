@@ -1,16 +1,19 @@
 import NewTasks from "./NewTask";
 import CurrentTasks from "./CurrentTasks";
+import { useState, useEffect } from "react";
 
-const URL = import.meta.env.VITE_APP_URL;
-const PUBLIC = import.meta.env.VITE_APP_PUBLIC ;
-const SECRET_KEY = import.meta.env.VITE_APP_SECRET;
 
 function Tasks() {
+    const [currentTasks, setCurrentTasks] = useState([]);
+
+    const handleNewTaskSubmit = (newTask) => {
+      setCurrentTasks([...currentTasks, newTask]);
+    }
 
     return (
         <div> 
-            <NewTasks />
-            <CurrentTasks />
+            <NewTasks onSubmit = {handleNewTaskSubmit}/>
+            <CurrentTasks currentTasks = {currentTasks}/>
         </div>
        
     )

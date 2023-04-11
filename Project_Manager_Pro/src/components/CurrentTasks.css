@@ -18,6 +18,10 @@ ul {
     /* margin-right: 16px; Add margin between child sections */
 }
 
+.the-section {
+    margin: 0 16px;
+}
+
 .task-card {
     background-color: #e0e0e0; /* Use a default lighter background color */
     border-radius: 8px;
@@ -44,3 +48,4 @@ ul {
     color: gray;
     font-weight: normal;
 }
+
