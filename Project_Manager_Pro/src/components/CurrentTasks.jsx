@@ -64,6 +64,8 @@ function CurrentTasks({currentTasks}) {
 
     return (
         <div> 
+                <TaskData tasks={tasks}/>
+
             <ul className="task-sections">
                 <div className="the-section">
                     <h3>Tasks in Queue</h3>
@@ -79,7 +81,6 @@ function CurrentTasks({currentTasks}) {
                     {renderTasks(tasks, (task) => task.finished)}
                 </div>
             </ul>
-            <TaskData tasks={tasks}/>
 
         </div>
        
