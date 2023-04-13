@@ -26,7 +26,7 @@ function NewTasks({ onSubmit }) {
     const updatedFormData = { ...formData, deadline: updatedDeadline };
   
     await supabase.from('tasks').insert(updatedFormData).select();
-    onSubmit(updatedFormData);
+    onSubmit(); 
     setExpanded(false); // Reset form expansion state
   };
   
@@ -34,9 +34,6 @@ function NewTasks({ onSubmit }) {
   const toggleForm = () => {
     setExpanded(!expanded); // Toggle form expansion state
   };
-
-  
-  
 
   return (
     <div className="new-task-container" >
@@ -88,13 +85,16 @@ function NewTasks({ onSubmit }) {
     
       ):
       ( 
-        <div style={{ textAlign: 'center' }}>
+        <div>
             <span>
-                <h2 style={{ display: 'inline', margin: '0' }}>Task Manager 🚀</h2>
-                <button className="expand-btn" onClick={toggleForm} style={{ marginLeft: '10px' }}>
+                {/* <h2 style={{ display: 'inline', margin: '0' }}>Task Manager 🚀</h2> */}
+                <button className="expand-btn" onClick={toggleForm}>
                 New Task
                 </button>
+
             </span>
+            <br />
+
          </div>
 
 

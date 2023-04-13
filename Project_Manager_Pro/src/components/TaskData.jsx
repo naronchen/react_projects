@@ -45,10 +45,14 @@ function TaskData({ tasks }) {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <div style={{ width: '260px', height: '200px' }}>
+      <div style={{ width: '255px', height: '160px' }}>
         <Doughnut
           data={chartData}
-          options={{ maintainAspectRatio: false }}
+          options={{ maintainAspectRatio: false,
+            plugins: {
+            legend: {display: false},
+            tooltips: {enabled: false}
+          }}}
         />
       </div>
     </div>

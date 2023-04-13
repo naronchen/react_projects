@@ -12,7 +12,7 @@ function Tasks() {
 
     return (
         <div> 
-            <NewTasks onSubmit = {handleNewTaskSubmit}/>
+            {/* <NewTasks onSubmit = {handleNewTaskSubmit}/> */}
             <CurrentTasks currentTasks = {currentTasks}/>
         </div>
        

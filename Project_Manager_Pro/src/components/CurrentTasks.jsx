@@ -4,23 +4,24 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './CurrentTasks.css'
 import TaskData from './TaskData'
+import NewTasks from './NewTask'
 
-function CurrentTasks({currentTasks}) {
+function CurrentTasks() {
     const [tasks, setTasks] = useState([])
+
+    const fetchTasks = async () => {
+      const { data, error } = await supabase.from('tasks')
+                                              .select()
+      if (error) { console.log(error)} 
+      else { 
+          
+          console.log("data:", data)
+          setTasks(data)}
+  }
+
     useEffect(() => {
-
-        const fetchTasks = async () => {
-            const { data, error } = await supabase.from('tasks')
-                                                    .select()
-            if (error) { console.log(error)} 
-            else { 
-                
-                console.log("data:", data)
-                setTasks(data)}
-        }
-
         fetchTasks()
-    }, [currentTasks])
+    }, [])
     
     const subtractDate = (date) => {
         const today = new Date()
@@ -41,38 +42,57 @@ function CurrentTasks({currentTasks}) {
 
     const renderTasks = (tasks, condition) => {
         return (
-          <ul>
-            {tasks.map((task) => {
-              if (condition(task)) {
-                return (
-                  <Link
-                    key={task.id}
-                    to={`/task/${task.id}`}
-                    className="task-card"
-                    style={{ borderLeftColor: task.color }}
-                  >
-                    <span className="task-content">{task.content}</span>
-                    <span className="task-deadline">{subtractDate(task.deadline)}</span>
-                  </Link>
-                );
-              }
-              return null; // Render nothing for other cases
-            })}
-          </ul>
+          <>
+            <div>
+              {tasks.map((task) => {
+                if (condition(task)) {
+                  return (
+                    <Link
+                      key={task.id}
+                      to={`/task/${task.id}`}
+                      className="task-card"
+                      style={{ borderLeftColor: task.color }}
+                    >
+                      <span className="task-content">{task.content}</span>
+                      <span className="task-deadline">{subtractDate(task.deadline)}</span>
+                    </Link>
+                  );
+                }
+                return null; // Render nothing for other cases
+              })}
+            </div>
+          </>
         );
       };
 
+      const handleNewDay = async () => {
+        // delete everything finished: true
+        console.log("new day")
+        const { data, error } = await supabase.from('tasks')
+                                              .delete()
+                                              .match({finished: true})
+        console.log("newday finished")
+        if (error) { console.log(error)}
+        else { 
+          fetchTasks()
+          console.log("data:", data)}
+      }
+
+
     return (
         <div> 
-                <TaskData tasks={tasks}/>
-
-            <ul className="task-sections">
+            <div className = "first-line">
+              < NewTasks onSubmit={fetchTasks}/>
+              <TaskData tasks={tasks}/>
+              <button className="expand-btn" onClick={handleNewDay}> New Day</button>   
+            </div>
+            <div className="task-sections">
                 <div className="the-section">
                     <h3>Tasks in Queue</h3>
                     {renderTasks(tasks, (task) => !task.inprogress && !task.finished)}
                 </div>
 
-                <div className="the-section">
+                <div className="the-section-2">
                     <h3>Tasks in Progress</h3>
                     {renderTasks(tasks, (task) => task.inprogress)}
                 </div>
@@ -80,7 +100,7 @@ function CurrentTasks({currentTasks}) {
                     <h3>Tasks Completed</h3>
                     {renderTasks(tasks, (task) => task.finished)}
                 </div>
-            </ul>
+            </div>
 
         </div>
        

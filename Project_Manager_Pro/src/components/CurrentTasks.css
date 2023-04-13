@@ -1,32 +1,32 @@
-ul {
-    margin: 0;
-    padding: 0;
-  }
-  
+
 .task-sections {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
     list-style-type: none;
     padding: 0;
+    /* outline: auto; */
+    width: 100%;
+    gap: 100px;
 }
 
 /* for some reason middle one is being squeezed */
 
-.task-sections li {
-
+/* .task-sections li { */
+    
     /* flex: 1; */
     /* margin-right: 16px; Add margin between child sections */
-}
+/* } */
 
-.the-section {
-    margin: 0 16px;
-}
+/* .the-section {
+    margin: 0 80px;
+} */
 
 .task-card {
     background-color: #e0e0e0; /* Use a default lighter background color */
     border-radius: 8px;
     padding: 16px;
-    margin: 8px;
+    margin: 8px 00;
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
@@ -48,4 +48,12 @@ ul {
     color: gray;
     font-weight: normal;
 }
+
+
+.first-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 

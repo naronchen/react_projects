@@ -36,9 +36,9 @@
     margin-left: 10px;
     padding: 5px; /* Add padding for spacing */
 
-
-
   }
+
+
 
   .btn-class{
     align-self: center;
@@ -48,18 +48,12 @@
     width: 92px; /* Set width to 100% to fill the parent container */
     padding: 10px; /* Add padding for spacing */
     margin: 0px 5px;
-
   }
 
   #submit-btn:hover {
     background-color: lightsteelblue;
   }
 
-  .expand-btn {
-    /* margin: 10px 10px; */
-    margin: 0px 5px;
-
-  }
   
   .expand-btn:hover {
     background-color: lightseagreen;
