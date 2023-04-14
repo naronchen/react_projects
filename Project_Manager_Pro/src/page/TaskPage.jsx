@@ -5,38 +5,28 @@ import './TaskPage.css'
 
 function TaskPage() {
     // here I update the task
-    const [task, setTask] = useState(null)
-    const [content, setContent] = useState(''); // State to track the task content
-    // const inputRef = useRef(null); // Ref to store reference to the input element
-    const [deadline, setDeadline] = useState(''); // State to track the task deadline
-    const [inProgress, setInProgress] = useState(false) // State to track "in progress" status
-    const [completed, setCompleted] = useState(false) // State to track "completed" status
-
+    const [task, setTask] = useState({
+      content: '',
+      deadline: '',
+      inprogress: false,
+      finished: false
+    })
+    
     let id = useParams().taskid
 
-
-
     const handleContentChange = (event) => {
-      // setIsEditing(true)
-      setContent(event.target.value); // Update content state with input value
-      // console.log("content:", content)
+      setTask({...task, content: event.target.value})
     }
-
     const handleDeadlineChange = (event) => {
-      setDeadline(event.target.value);
+      setTask({...task, deadline: event.target.value})
+    }
+    const handleInProgressChange = (event) => {
+      setTask({...task, finished: false, inprogress: event.target.checked})
     }
     const handleCompletedChange = (event) => {
-      setInProgress(false)
-      setCompleted(event.target.checked)
+      setTask({...task, inprogress: false, finished: event.target.checked})
     }
-  
-    // const handleContentBlur = () => {
-    //   setIsEditing(false); // Disable editing mode when input field is blurred
-    // }
-    const handleInProgressChange = (event) => {
-      setCompleted(false)
-      setInProgress(event.target.checked)
-    }
+
     useEffect(() => {
       const fetchTask = async () => {
         const {data, error} = await supabase
@@ -48,10 +38,6 @@ function TaskPage() {
           console.log(error)
         } else {
           setTask(data[0])
-          setContent(data[0]?.content || '');
-          setDeadline(data[0]?.deadline || '');
-          setInProgress(data[0]?.inprogress || false) // Set "in progress" status from fetched data
-          setCompleted( data[0]?.finished || false) // Set "completed" status from fetched data
 
         }
       }
@@ -62,15 +48,11 @@ function TaskPage() {
     const updateTask = async () => {
       try {
         // Convert deadline value to valid timestamp format
-        const updatedDeadline = new Date(deadline).toISOString();
+        task.deadline = new Date(task.deadline).toISOString();
     
         const { data, error } = await supabase
           .from('tasks')
-          .update({ content: content, 
-                    deadline: updatedDeadline, 
-                    inprogress: inProgress,
-                    finished: completed
-                  }) // Use updatedDeadline
+          .update( task ) 
           .eq('id', id);
     
         if (error) {
@@ -106,10 +88,16 @@ function TaskPage() {
     
 
     const addHoursToUTC = (dateString, hours) => {
-      const date = new Date(dateString);
+      const parsedDate = Date.parse(dateString);
+      if (isNaN(parsedDate)) {
+        // Handle invalid date string
+        return '';
+      }
+      const date = new Date(parsedDate);
       date.setUTCHours(date.getUTCHours() - hours);
       return date.toISOString().substring(0, 16);
     };
+    
 
     return (
       <div className="task-page-container">
@@ -124,7 +112,7 @@ function TaskPage() {
         <br />
         <input
           type="datetime-local"
-          value={deadline ? addHoursToUTC(deadline, 4) : ''}
+          value={task.deadline ? addHoursToUTC(task.deadline, 4) : ''}
           onChange={handleDeadlineChange}
           className="input-like-h3"
         />
@@ -136,7 +124,7 @@ function TaskPage() {
             <label className="checkbox-label">
               <input 
                 type="checkbox"
-                checked={inProgress} // Bind "in progress" status to the checkbox
+                checked={task.inprogress} // Bind "in progress" status to the checkbox
                 onChange={handleInProgressChange}
               />
               <span className="checkbox-custom"></span>
@@ -145,7 +133,7 @@ function TaskPage() {
           <label className="checkbox-label">
             <input 
               type="checkbox"
-              checked={completed} // Bind "completed" status to the checkbox
+              checked={task.finished} // Bind "completed" status to the checkbox
               onChange={handleCompletedChange}
             />
             <span className="checkbox-custom"></span>
