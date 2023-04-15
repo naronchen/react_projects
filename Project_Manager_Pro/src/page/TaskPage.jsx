@@ -9,7 +9,8 @@ function TaskPage() {
       content: '',
       deadline: '',
       inprogress: false,
-      finished: false
+      finished: false,
+      description: ''
     })
     
     let id = useParams().taskid
@@ -25,6 +26,9 @@ function TaskPage() {
     }
     const handleCompletedChange = (event) => {
       setTask({...task, inprogress: false, finished: event.target.checked})
+    }
+    const handleDescriptionChange = (event) => {
+      setTask({...task, description: event.target.value})
     }
 
     useEffect(() => {
@@ -142,6 +146,9 @@ function TaskPage() {
         </span>
       </div>
 
+      <textarea onChange={handleDescriptionChange} value={task.description}>
+      </textarea>
+      
 
         <br />
         <button onClick={updateTask} className="button-update">

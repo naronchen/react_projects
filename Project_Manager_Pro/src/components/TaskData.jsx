@@ -44,7 +44,7 @@ function TaskData({ tasks }) {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div >
       <div style={{ width: '255px', height: '160px' }}>
         <Doughnut
           data={chartData}
